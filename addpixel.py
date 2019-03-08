@@ -1,14 +1,14 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('addedpixel(copy).jpg')
+img = cv2.imread('addedpixel.jpg')
 
-img.itemset((20,20,0),255)
-img.itemset((20,20,1),255)
-img.itemset((20,20,2),255)
+img.itemset((20,20,0),180)
+img.itemset((20,20,1),75)
+img.itemset((20,20,2),75)
 
 
-cv2.imwrite('addedpixel11.png',img)
+cv2.imwrite('addedpixel.png',img)
 
 #img = cv2.imread("DSCF4516.JPG")
 
@@ -26,7 +26,7 @@ cv2.imwrite('addedpixel11.png',img)
 
 #print(px2)
 
-img2 = cv2.imread('addedpixel11.png')
+img2 = cv2.imread('addedpixel.png')
 
 px = img2[20,20]
 
