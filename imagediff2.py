@@ -3,15 +3,11 @@ import numpy as np
 from PIL import Image, ImageChops
 
 
-#TODO Image size comparison 
+#TODO Image size comparison filter
 
 
 file1 = Image.open("addedpixel11.png")
 file2 = Image.open("addedpixel.png")
-
-#file1[20,20] = (255,255,255)
-#file1.itemset((20,20,1),255)
-#file1.itemset((20,20,2),255)
 
 print(file1.getpixel((20,20)))
 
@@ -25,8 +21,6 @@ img.save('imageout4.png')
 
 img2 = np.array(img)
 img2 = cv2.cvtColor(img2,cv2.COLOR_BGR2RGB)
-
-#img2 = cv2.imread('/home/i/Desktop/20/Programming/pythonopencv/imageout4.png')
 
 print(img2[20,20])
 
@@ -51,18 +45,6 @@ initialimage = cv2.cvtColor(intialimage,cv2.COLOR_BGR2RGB)
 contoured = cv2.drawContours(initialimage, contours, -1, (0,0,255), 5)
 
 
-
-#params = cv2.SimpleBlobDetector_Params()
-#params.minThreshold = 0
-#params.maxThreshold = 20
+cv2.imwrite('locationofstuckpixel.jpg', contoured)
 
 
-#detector = cv2.SimpleBlobDetector_create(params)
-#keypoints = detector.detect(thresh1)
-
-#im_with_keypoints = cv2.drawKeypoints(thresh1, keypoints, np.array([]), (0,0,255), cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
-
-
-cv2.imwrite('locationofstuckpixel.png', contoured)
-#cv2.imshow('img',im_with_keypoints)
-#cv2.waitKey(0)
